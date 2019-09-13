@@ -1,5 +1,6 @@
-# android-list-long-click-action
-Listener to add to a recycler view that shows an animation for an action when a user does a long click on an item in the list.
+# Android List long click action
+
+This is a listener to add to a recycler view that shows an animation for an action when a user does a long click on an item in the list.
 
 All the magic happens inside the single class ActionLongClickListener which reacts to user's touches in the recycler view and on long touch detected, starts the animations to highlight the selected item from the list.
 
@@ -70,8 +71,42 @@ list.addOnItemTouchListener(ActionLongClickListener(
                 }
 
                 override fun onAction(selectedPosition: Int) {
+                    //val message = when(adapter.getItemViewType(selectedPosition)){
+                    //    AdapterExample.TITLE_TYPE -> "Selected a title"
+                    //    AdapterExample.SIMPLE_ITEM_TYPE -> "Selected a simple item"
+                    //    AdapterExample.ITEM_WITH_HEADER_TYPE -> "Selected a simple item with header"
+                    //    else -> "Selected nothing"
+                    //}
+                    //Toast.makeText(this@MainActivity, message, Toast.LENGTH_LONG).show()
                     Toast.makeText(this@MainActivity, "Selected item at $selectedPosition", Toast.LENGTH_SHORT).show()
                 }
             }))
             
 <img src="https://media.giphy.com/media/TJaK4DPJJfwuRGoEn7/giphy.gif" width="25%" height="25%">
+
+## ActionLongClickListener
+### onAction
+When the long click finishes, the ```onAction``` method is called indicating the item position in the recycler view's adapter that was selected by the user.
+
+### isItemActionable
+Specify if the view at the ```selectedPosition``` can be used for the long click. If returned false, the item at that selected position is ignored.
+
+### getViewBoundary
+Defines the part of the view selected from the recycler view we want to use for the gesture. 
+If null, the view boundary matches the selected view from the recycler view.
+
+### getViewBoundaryPadding
+Padding to the view that should be included for the gesture. Used to exclude/include
+fragments of the view selected from the recycler view.
+If null, the view to be part of the gesture matches the getViewBoundary()
+
+### getHighlightedViewBoundaryPadding
+Padding to the view being highlighted.
+If values in Rect are positive, the highlighted section to be taken from the view will be smaller.
+If values in Rect are negative, the highlighted section to be taken from the view will be bigger.
+If null, the highlighted section will match the one defined by getViewBoundaryPadding()
+
+## Button and bar position
+Note that the button will be showing in the center of the highlightedView (considering padding if any specified),
+and the loader will be shown at the bottom of the view boundary (or at the bottom of the padding if any).
+Moreover the highlightedView (with the padding applied if any) is the only region accepted for the touching gesture. If user touches anywhere else, it won't activate the animation.
