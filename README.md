@@ -110,3 +110,9 @@ If null, the highlighted section will match the one defined by getViewBoundaryPa
 Note that the button will be showing in the center of the highlightedView (considering padding if any specified),
 and the loader will be shown at the bottom of the view boundary (or at the bottom of the padding if any).
 Moreover the highlightedView (with the padding applied if any) is the only region accepted for the touching gesture. If user touches anywhere else, it won't activate the animation.
+
+### Improvements to the code are always welcome :D
+
+## Used in apps
+This listener was implemented specially for Krowd9 which after implementation looks like this:
+<img src="https://media.giphy.com/media/WpgAv9tETJGj9nL7hX/giphy.gif" width="25%" height="25%">
