@@ -83,6 +83,7 @@ For instance, if we have a recycler view that displays different types of items 
             }))
             
 Which using the components in the example project looks like follows:
+
 <img src="https://media.giphy.com/media/TJaK4DPJJfwuRGoEn7/giphy.gif" width="25%" height="25%">
 
 ## ActionLongClickListener
