@@ -23,7 +23,7 @@ For more complex scenarios where parts of the views from the list shouldn't be h
 For instance, if we have a recycler view that displays different types of items (title item, simple item and simple item with header) we can decide which items not to consider for the selection (e.g. the title items) and which items we want to have part of it's rect highlighted (e.g. header item which also contains the stars rating).
 
 
-list.addOnItemTouchListener(ActionLongClickListener(
+        list.addOnItemTouchListener(ActionLongClickListener(
             this,
             R.drawable.ic_share,
             ResourcesCompat.getColor(resources, R.color.colorAccent, null),
@@ -82,6 +82,7 @@ list.addOnItemTouchListener(ActionLongClickListener(
                 }
             }))
             
+Which using the components in the example project looks like follows:
 <img src="https://media.giphy.com/media/TJaK4DPJJfwuRGoEn7/giphy.gif" width="25%" height="25%">
 
 ## ActionLongClickListener
