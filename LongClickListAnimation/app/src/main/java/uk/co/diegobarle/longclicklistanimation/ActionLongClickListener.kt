@@ -398,4 +398,22 @@ class ActionLongClickListener(activity: Activity, actionImageRes: Int, private v
         //and the loader will be at the bottom of the view boundary (or at the bottom of the padding if any).
         //Moreover the highlightedView is the only region accepted for the touching gesture. If user touches anywhere else, it won't activate the animation.
     }
+
+    interface SimpleActionLongClickCallback: ActionLongClickCallback{
+        override fun getHighlightedViewBoundaryPadding(selectedPosition: Int, selectedView: View?): Rect? {
+            return null
+        }
+
+        override fun getViewBoundary(selectedPosition: Int, selectedView: View?): Rect? {
+            return null
+        }
+
+        override fun getViewBoundaryPadding(selectedPosition: Int, selectedView: View?): Rect? {
+            return null
+        }
+
+        override fun isItemActionable(selectedPosition: Int): Boolean {
+            return true
+        }
+    }
 }
