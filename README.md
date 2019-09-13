@@ -74,4 +74,4 @@ list.addOnItemTouchListener(ActionLongClickListener(
                 }
             }))
             
-![](long_tap_gesture.gif)
+<img src="https://media.giphy.com/media/TJaK4DPJJfwuRGoEn7/giphy.gif" width="25%" height="25%">
