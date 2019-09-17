@@ -1,4 +1,4 @@
-# Android List long click action
+# Android list long click action
 
 This is a listener to add to a recycler view that shows an animation for an action when a user does a long click on an item in the list.
 
@@ -17,6 +17,8 @@ For example:
                     Toast.makeText(this@MainActivity, "Selected item at $selectedPosition", Toast.LENGTH_SHORT).show()
                 }
             }))
+            
+<img src="https://media.giphy.com/media/fU4eq6JJ2ljz42zUkK/giphy.gif" width="25%" height="25%">
 
 For more complex scenarios where parts of the views from the list shouldn't be highlighted, you can implement the ```getViewBoundaryPadding```, ```getHighlightedViewBoundaryPadding``` and ```getViewBoundary``` methods. 
 
