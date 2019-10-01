@@ -3,6 +3,7 @@ package uk.co.diegobarle.longclicklistanimation
 import android.animation.Animator
 import android.app.Activity
 import android.graphics.Bitmap
+import android.graphics.PorterDuff
 import android.graphics.Rect
 import android.os.Handler
 import android.view.HapticFeedbackConstants
@@ -44,6 +45,7 @@ class ActionLongClickListener(activity: Activity, actionImageRes: Int, private v
         val actionButtonPadding = activity.resources.getDimensionPixelSize(R.dimen.small_button_padding)
         actionView.layoutParams = ViewGroup.LayoutParams(actionViewSize, actionViewSize)
         actionView.setBackgroundResource(R.drawable.share_round_background)
+        actionView.background.setColorFilter(accentColor, PorterDuff.Mode.SRC_ATOP)
         actionView.setImageResource(actionImageRes)
         actionView.setPadding(actionButtonPadding, actionButtonPadding, actionButtonPadding, actionButtonPadding)
 
